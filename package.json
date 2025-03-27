@@ -1,0 +1,12 @@
+{
+  "name": "slides-keepass-2-nextcloud",
+  "version": "1.0.0",
+  "description": "Proteger y sincroniza claves entre dispositivos con Keepass y Nextcloud",
+  "main": "index.js",
+  "repository": "git@github.com:moonline/Slides.Keepass2Nextcloud.git",
+  "author": "moonline",
+  "license": "CC BY-SA 4.0",
+  "dependencies": {
+    "reveal.js": "^5.2.0"
+  }
+}
