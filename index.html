@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>🔐 KeePass</title>
 
 	<link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
 	<link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
@@ -13,6 +13,16 @@
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+
+	<style>
+		.vh-80 {
+			height: 80vh;
+		}
+
+		.vh-60 {
+			height: 60vh;
+		}
+	</style>
 </head>
 
 <body>
@@ -24,18 +34,160 @@
 				<h2 class="r-fit-text">La última clave que necesitarás recordar</h2>
 				<!-- Proteger y sincroniza claves entre dispositivos con Keepass y Nextcloud -->
 			</section>
-			<section data-background-image="images/safe-dark-gemini.jpg" data-background-size="contain"
-				data-background-opacity="0.2">
-				<section>
-					<h1>Porqué tenemos claves?</h1>
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: A picture of a golden key with a keyring with a bunch of keys at a door lock of a wooden door -->
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
+					<h2>¿Porqué tenemos claves?</h2>
+					<blockquote>¿No sería más sencillo sin claves?</blockquote>
 				</section>
-				<section>
-					<h2>Cómo protegemos nuestras claves?</h2>
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
+					<h3>¿Porqué tenemos claves?</h3>
+					<ul>
+						<li><strong>Llaves</strong> de nuestra casa: Solo puede entrar quienes tienen la llave</li>
+						<li>Claves son como <strong>llaves virtuales</strong></li>
+						<li>Pretegemos a nuestra casa virtual con claves:
+							<ul>
+								<li>El móvil o la computadora</li>
+								<li>El homebanking</li>
+								<li>Cuentas en redes sociales</li>
+								<li>...</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
-				<section>
-					<h2>Cómo sincronizamos claves?</h2>
+
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
+					<h2>Qué critico son mis cuentas?</h2>
+					<blockquote>¿Que pasaría si mi vecino tendría la clave de mi homebanking?</blockquote>
+				</section>
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
+					<h3>¿Qué critico son mis cuentas?</h3>
+					<ul>
+						<li>
+							<strong>Medio</strong>: Cuentas que no permiten hacer cambios críticos
+							<blockquote>Pedidos Ya, EdeNor, Coto, ...</blockquote>
+						</li>
+						<li>
+							<strong>Alto</strong>:
+							Cuentas que manejan dinero o permiten hacer cambios críticos
+							<blockquote>Mercadopago, Afip, Anses, ...</blockquote>
+						</li>
+					</ul>
+				</section>
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
+					<h3>¿Qué critico son mis cuentas?</h3>
+					<li>
+						<strong>Crítico</strong>:
+						Cuentas que permiten acceso a otras cuentas
+						<blockquote>mail, móvil, authenticador, ...</blockquote>
+					</li>
+					</ul>
 				</section>
 			</section>
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: A picture of two guards guarding a golden key in a warehouse -->
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.4">
+					<h2>¿Cómo protegemos nuestras cuentas?</h2>
+					<blockquote>¿Sirve la fecha de cumpleaños de mi marido como pin para mi móvil?</blockquote>
+				</section>
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h3>¿Anotado protegemos nuestras cuentas?</h3>
+					<ul>
+						<li>
+							<strong>Medio</strong>:
+							PIN, clave simple
+						</li>
+						<li>
+							<strong>Alto</strong>:
+							Clave + segundo factor
+						</li>
+						<li>
+							<strong>Crítico</strong>:
+							Clave compleja + segundo factor o token de hardware
+						</li>
+					</ul>
+				</section>
+
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h2>¿Dónde guardamos todas estas claves?</h2>
+					<blockquote>¿Anotado en un papelito baja el teclado?</blockquote>
+				</section>
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h3>¿Dónde guardamos todas estas claves?</h3>
+					<ul>
+						<li>Anotado en un papel en un lugar seguro o en la caja fuerte</li>
+						<li>En el llavero del sistema operativo</li>
+						<li>En una nube especial para claves</li>
+						<li>En un tesoro digital...<br />...como <strong>KeePass</strong></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: An image of a safe named KeePass, full of post-its, guarded by unarmed agents with sunglasses -->
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.4"
+					data-background-position="top 20% left 50%">
+					<h2>KeePass</h2>
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.2"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo instalar KeePass?</h2>
+						<p>Linux: Desde software manager</p>
+						<img class="vh-60" src="images/software-manager-keepass-1.png" />
+						<img class="vh-60" src="images/software-manager-keepass-2.png" />
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.2"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo instalar KeePass?</h2>
+						<img class="r-stretch" src="images/download-keepass.png" />
+						<p>Windows/Mac: descargar desde <a
+								href="https://keepass.info/download.html">keepass.info/download.html</a> (Windows/Mac)
+						</p>
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.2"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo instalar KeePass?</h2>
+						<img class="r-stretch" src="images/google-play-keepass2android.png" />
+						<p>Android store: <a
+								href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">keepass2android.keepass2android</a>
+						</p>
+				</section>
+			</section>
+
+			<section>
+				<section data-background-image="images/envelope-handover.jpg" data-background-opacity="0.4"
+					data-background-position="top 20% left 50%">
+					<h2>¿Cómo sincronizamos claves?</h2>
+					<blockquote>¿En un archivo de texto en Dropbox?</blockquote>
+				</section>
+				<section data-background-image="images/envelope-handover.jpg" data-background-opacity="0.2"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo sincronizamos claves?</h2>
+						<ul>
+							<li>...</li>
+						</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Nextcloud</h2>
+					<blockquote>...</blockquote>
+				</section>
+				<section>
+					<h3>¿Cómo instalar Nextcloud?</h2>
+						<ul>
+							<li>...</li>
+						</ul>
+				</section>
+			</section>
+
 			<section>
 				<h2>Recursos</h2>
 
@@ -73,11 +225,16 @@
 					</a>
 				</p>
 
-				<p>Está presentación fue creado con <a href="https://revealjs.com/">reveal.js</a></p>
+				<ul>
+					<li>Está presentación fue creado con <a href="https://revealjs.com/">reveal.js</a></li>
+					<li>Las imagenes fueron generado por <a href="https://deepmind.google/technologies/imagen-3/">Imagen
+							3</a> en Google Gemini</li>
+				</ul>
 
 				<h2>Detalles</h2>
 				<ul>
-					<li><a href="https://github.com/moonline/Slides.Keepass2Nextcloud">GitHub: Slides.Keepass2Nextcloud</a></li>
+					<li><a href="https://github.com/moonline/Slides.Keepass2Nextcloud">GitHub:
+							Slides.Keepass2Nextcloud</a></li>
 					<li><a href="https://www.linkedin.com/in/tobias-blaser-578388139/">Linkedin: Tobias Blaser</a></li>
 				</ul>
 			</section>
