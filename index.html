@@ -79,7 +79,7 @@
 
 				<section>
 					<h2>¿Quién soy?</h2>
-					<iframe class="r-stretch" data-src="https://tobiasblaser.ch/en/about/tobiasblaser/"
+					<iframe class="r-stretch" data-src="https://tobiasblaser.ch/en/about/tobiasblaser/#content-start"
 						data-preload></iframe>
 					<a href="https://www.linkedin.com/in/tobias-blaser-578388139/"
 						target="_blank">linkedin.com/in/tobias-blaser-578388139</a>
@@ -89,11 +89,11 @@
 			<section>
 				<!-- Gemini/Imagen 3 prompt: A picture of a golden key with a keyring with a bunch of keys at a door lock of a wooden door -->
 				<section id="keys" data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
-					<h2>¿Porqué tenemos claves?</h2>
+					<h2>¿Por qué tenemos claves?</h2>
 					<blockquote>¿No sería más sencillo sin claves?</blockquote>
 				</section>
 				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
-					<h3>¿Porqué tenemos claves?</h3>
+					<h3>¿Por qué tenemos claves?</h3>
 					<ul>
 						<li><strong>Llaves</strong> de nuestra casa: Solo puede entrar quienes tienen la llave</li>
 						<li>Claves son como <strong>llaves virtuales</strong></li>
@@ -109,26 +109,28 @@
 				</section>
 
 				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
-					<h2>Qué crítico son mis cuentas?</h2>
+					<!-- TODO encontrar sinonimo de crítico/delicado -->
+					<h2>¿Qué delicadas son mis cuentas?</h2>
 					<blockquote>¿Que pasaría si mi vecino tendría la clave de mi homebanking?</blockquote>
 				</section>
 				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
-					<h3>¿Qué crítico son mis cuentas?</h3>
+					<h3>¿Qué delicadas son mis cuentas?</h3>
 					<div class="r-stack">
 						<div class="fragment fade-out" data-fragment-index="0">
 							<h4>Medio</h4>
-							<p>Cuentas que no permiten hacer cambios críticos</p>
+							<p>Cuentas que no permiten hacer cambios delicados</p>
 							<blockquote>Pedidos Ya, EdeNor, Coto, ...</blockquote>
 						</div>
 						<div class="fragment current-visible" data-fragment-index="0">
 							<h4>Alto</h4>
-							<p>Cuentas que manejan dinero o permiten hacer cambios críticos</p>
+							<p>Cuentas que manejan dinero o permiten hacer cambios delicados</p>
 							<blockquote>Mercadopago, Afip, Anses, ...</blockquote>
 						</div>
 						<div class="fragment">
 							<h4>Alto</h4>
 							<p>Cuentas que permiten acceso a otras cuentas</p>
-							<blockquote>mail, móvil, authenticador, ...</blockquote>
+							<!-- TODO autenticador en castellano? -->
+							<blockquote>mail, móvil, autenticador, ...</blockquote>
 						</div>
 					</div>
 				</section>
@@ -147,15 +149,15 @@
 					<ul>
 						<li>
 							<strong>Medio</strong>:
-							PIN, clave simple
+							PIN o clave simple
 						</li>
 						<li>
 							<strong>Alto</strong>:
 							Clave + segundo factor
 						</li>
 						<li>
-							<strong>Crítico</strong>:
-							Clave compleja + segundo factor o token de hardware
+							<strong>Delicado</strong>:
+							Clave compleja + segundo factor, token de hardware o limitación de acceso fisico
 						</li>
 					</ul>
 				</section>
@@ -189,10 +191,12 @@
 					<h3>¿Qué es KeePass?</h3>
 					<ul>
 						<li>Es un gestor de contraseñas</li>
+						<li>Está protegido por una <strong>clave maestra</strong></li>
 						<li>Permite almacenar usuario, contraseña, página web, etiquetas y adjuntos</li>
 						<li>Puede generar claves</li>
-						<li>Es extensible por plugins</li>
-						<li>Existe para Linux, Windows, Mac, Android, iOS, web y otros sistemas</li>
+						<li>Es extensible por extensiones</li>
+						<li>Es un software abierto y existe para Linux, Windows, Mac, Android, iOS, web y otros sistemas
+						</li>
 					</ul>
 				</section>
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
@@ -200,8 +204,8 @@
 					<h3>¿Cómo instalar KeePass?</h3>
 					<div class="r-stack">
 						<figure class="fragment fade-out" data-fragment-index="0">
-							<img class="vh-40" src="images/software-manager-keepass-1.png" />
-							<img class="vh-40" src="images/software-manager-keepass-2.png" />
+							<img class="vh-30" src="images/software-manager-keepass-1.png" />
+							<img class="vh-30" src="images/software-manager-keepass-2.png" />
 							<figcaption>Linux: Desde software manager</figcaption>
 						</figure>
 						<figure class="fragment current-visible" data-fragment-index="0">
@@ -213,7 +217,7 @@
 						</figure>
 						<figure class="fragment">
 							<img class="vh-40" src="images/google-play-keepass2android.png" />
-							<figcaption>Google Play Store:<br />
+							<figcaption>Google Play Store: Instalar el app<br />
 								<a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android"
 									target="_blank">keepass2android.keepass2android</a>
 							</figcaption>
@@ -224,8 +228,8 @@
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
 					data-background-position="top 20% left 50%">
 					<h3>¿Cómo crear un nuevo tesoro de claves?</h3>
-					<img class="vh-50" src="images/keepass-new-database-dialog.png" />
-					<img class="vh-50" src="images/keepass-new-database-password.png" />
+					<img class="vh-40" src="images/keepass-new-database-dialog.png" />
+					<img class="vh-40" src="images/keepass-new-database-password.png" />
 				</section>
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
 					data-background-position="top 20% left 50%">
@@ -315,6 +319,7 @@
 									target="_blank">extensiones</a>.<br />
 								Por ejemplo:</p>
 							<ul>
+								<!-- TODO Cambiar orden de etiqueta y link -->
 								<li><a href="https://apps.nextcloud.com/apps/notes" target="_blank">Notes
 										(Markdown)</a></li>
 								<li><a href="https://apps.nextcloud.com/apps/keeweb" target="_blank">Keeweb
@@ -322,7 +327,7 @@
 								<li><a href="https://apps.nextcloud.com/apps/spreed" target="_blank">Talk (Chat y
 										llamadas)</a></li>
 								<li><a href="https://apps.nextcloud.com/apps/onlyoffice" target="_blank">ONLYOFFICE
-										(Edicion de documentos)</a></li>
+										(Edición de documentos)</a></li>
 							</ul>
 							<p>y muchos más</p>
 						</div>
@@ -332,9 +337,9 @@
 				<section data-background-image="images/paperplanes-cloud.jpg" data-background-opacity="0.1">
 					<h3>¿Cómo obtener una cuenta de Nextcloud?</h3>
 					<ul>
-						<li>Por provedor:
+						<li>Por proveedor:
 							<ol>
-								<li>Elegir un provedor: <a href="https://nextcloud.com/es/sign-up/"
+								<li>Elegir un proveedor: <a href="https://nextcloud.com/es/sign-up/"
 										target="_blank">Proveedores certificados</a> o <a
 										href="https://nextcloud.com/es/partners/" target="_blank">Socios</a></li>
 								<li>Crear una cuenta</li>
@@ -421,7 +426,7 @@
 								target="_blank">reveal.js</a>
 						</li>
 						<li>
-							Las imagenes fueron generado por <a href="https://deepmind.google/technologies/imagen-3/"
+							Las imagenes fueron generadas por <a href="https://deepmind.google/technologies/imagen-3/"
 								target="_blank">
 								Imagen 3
 							</a> en Google Gemini
