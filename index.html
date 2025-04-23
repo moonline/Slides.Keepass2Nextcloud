@@ -106,7 +106,7 @@
 				</section>
 
 				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
-					<!-- TODO encontrar sinonimo de crítico/delicado -->
+					<!-- TODO encontrar sinonimo de crítico/delicado - importante,relevante,significativo,sensitivo - ¿Qué importancia tienen mis cuentas? -->
 					<h2>¿Qué delicadas son mis cuentas?</h2>
 					<blockquote>¿Que pasaría si mi vecino tendría la clave de mi homebanking?</blockquote>
 				</section>
@@ -126,8 +126,7 @@
 						<div class="fragment">
 							<h4>Alto</h4>
 							<p>Cuentas que permiten acceso a otras cuentas</p>
-							<!-- TODO autenticador en castellano? -->
-							<blockquote>mail, móvil, autenticador, ...</blockquote>
+							<blockquote>mail, móvil, aplicación de autenticación, ...</blockquote>
 						</div>
 					</div>
 				</section>
@@ -188,7 +187,7 @@
 					<h3>¿Qué es KeePass?</h3>
 					<ul>
 						<li>Es un gestor de contraseñas</li>
-						<li>Está protegido por una <strong>clave maestra</strong></li>
+						<li>Está protegido por una <strong>clave maestra</strong> que encripta el tesoro</li>
 						<li>Permite almacenar usuario, contraseña, página web, etiquetas y adjuntos</li>
 						<li>Puede generar claves</li>
 						<li>Es extensible por extensiones</li>
@@ -291,13 +290,14 @@
 					<div class="r-stack">
 						<div class="fragment fade-out" data-fragment-index="0">
 							<p>
-								Es un software abierto
-								cliente-servidor que ofrece:
+								Es un software abierto cliente-servidor que ofrece una nube privada:
 							</p>
 							<ul>
 								<li>Alojamiento de archivos (WebDAV)</li>
 								<li>Sincronización de contactos (CardDAV)</li>
 								<li>Calendarios y tareas (CalDAV)</li>
+								<li>Acceso por dispositivos y la web</li>
+								<li>Compartir archivos, contactos y calendarios con otros usuarios o públicamente</li>
 							</ul>
 							<p><a href="https://nextcloud.com/es/" target="_blank">nextcloud.com</a> </p>
 						</div>
@@ -310,21 +310,43 @@
 							<img class="vh-40" src="images/nextcloud-client.jpg" />
 							<figcaption>Aplicación de escritorio</figcaption>
 						</figure>
+						<figure class=" fragment current-visible">
+							<img class="vh-40" src="images/nextcloud-mobile-overview.jpg" />
+							<img class="vh-40" src="images/nextcloud-mobile-files.jpg" />
+							<figcaption>Aplicación móvil</figcaption>
+						</figure>
+						<figure class="fragment current-visible">
+							<p>
+								Para sincronizar archivos, contactos y calendarios de forma regular, existen varios
+								apps:
+							</p>
+							<ul>
+								<li><a href="https://foldersync.io/" target="_blank">FolderSync Pro</a> (WebDAV)</li>
+								<li><a href="https://www.davx5.com/">DAVx<sup>5</sup></a> (WebDAV, CardDAV, CalDAV)</li>
+							</ul>
+						</figure>
 						<div class="fragment">
 							<p>
 								Existe una variedad amplia de <a href="https://apps.nextcloud.com"
 									target="_blank">extensiones</a>.<br />
 								Por ejemplo:</p>
 							<ul>
-								<!-- TODO Cambiar orden de etiqueta y link -->
-								<li><a href="https://apps.nextcloud.com/apps/notes" target="_blank">Notes
-										(Markdown)</a></li>
-								<li><a href="https://apps.nextcloud.com/apps/keeweb" target="_blank">Keeweb
-										(KeePass)</a></li>
-								<li><a href="https://apps.nextcloud.com/apps/spreed" target="_blank">Talk (Chat y
-										llamadas)</a></li>
-								<li><a href="https://apps.nextcloud.com/apps/onlyoffice" target="_blank">ONLYOFFICE
-										(Edición de documentos)</a></li>
+								<li>
+									Notas:
+									<a href="https://apps.nextcloud.com/apps/notes" target="_blank">Notes (Markdown)</a>
+								</li>
+								<li>
+									KeePass:
+									<a href="https://apps.nextcloud.com/apps/keeweb" target="_blank">Keeweb</a>
+								</li>
+								<li>
+									Chat y llamadas:
+									<a href="https://apps.nextcloud.com/apps/spreed" target="_blank">Talk</a>
+								</li>
+								<li>
+									Suite ofimática en linea:
+									<a href="https://apps.nextcloud.com/apps/onlyoffice" target="_blank">ONLYOFFICE</a>
+								</li>
 							</ul>
 							<p>y muchos más</p>
 						</div>
@@ -376,8 +398,62 @@
 				</section>
 			</section>
 
+
 			<section>
-				<section id="closing" data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.2">
+				<!-- Gemini/Imagen 3 prompt: An image of a golden envelope sent from a guard up to a white cloud -->
+				<section id="conclusions" data-background-image="images/guard-envelope-cloud.jpg"
+					data-background-opacity="0.4" data-background-position="top 30% left 50%">
+					<h2>Conclusiones</h2>
+				</section>
+				<section data-background-image="images/guard-envelope-cloud.jpg" data-background-opacity="0.2">
+					<h3>Conclusiones</h3>
+
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<h4>KeePass</h4>
+							<ul>
+								<li>Guarda claves de forma <strong>segura</strong> (encriptado)</li>
+								<li>Requiere una <strong>clave maestra fuerte</strong></li>
+								<li>Requiere guardar la frase de recuperación de forma segura – por ejemplo en
+									la caja fuerte</li>
+								<li>Se recomienda hacer un <strong>backup frequente</strong> del tesoro</li>
+								<li>Necesita un plan de acceso en caso de emergencia – por ejemplo guardando la clave
+									maestra en el tesoro de la pareja</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<h4>Nextcloud</h4>
+							<ul>
+								<li>
+									<strong>Sincroniza</strong> archivos,
+									contactos y calendarios entre dispositivos
+								</li>
+								<li>
+									Permite <strong>sincronizar tesoros de claves</strong> de forma segura
+									– si el <strong>proveedor es confiable</strong>
+								</li>
+								<li>
+									Permite acceder a contenidos desde
+									<strong>equipos móviles y la plataforma web</strong>
+								</li>
+								<li>
+									Para sincronizar contenidos a dispositivos móviles de forma regular se
+									<strong>require
+										apps de WebDAV, CalDAV y CardDAV</strong> – por ejemplo FolderSync y
+									DAVx<sup>5</sup>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<section>
+				<section id="closing" data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.4">
+					<h1 class="r-fit-text">KeePass 🙵 Nextcloud</h1>
+					<h2 class="r-fit-text">La última clave que necesitarás recordar</h2>
+				</section>
+				<section data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.2">
 					<h2>Recursos</h2>
 
 					<h3>KeePass</h3>
