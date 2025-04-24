@@ -64,14 +64,15 @@
 
 				<section data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.2">
 					<h2>KeePass 🙵 Nextcloud</h2>
-					<ol>
-						<li><a href="#/keys">Claves</a></li>
-						<li><a href="#/accounts">Proteger cuentas</a></li>
-						<li><a href="#/keepass">KeePass</a></li>
-						<li><a href="#/vault-sync">Sincronizar un tesoro de claves</a></li>
-						<li><a href="#/nextcloud">Nextcloud</a></li>
-						<li><a href="#/keepass-sync">Sincronizar KeePass con Nextcloud</a></li>
-					</ol>
+					<ul style="list-style-type: none;">
+						<li><a href="#/keys">🔖</a> Claves</li>
+						<li><a href="#/accounts">🔖</a> Proteger cuentas</li>
+						<li><a href="#/keepass">🔖</a> KeePass</li>
+						<li><a href="#/vault-sync">🔖</a> Sincronizar un tesoro de claves</li>
+						<li><a href="#/nextcloud">🔖</a> Nextcloud</li>
+						<li><a href="#/keepass-sync">🔖</a> Sincronizar KeePass con Nextcloud</li>
+						<li><a href="#/conclusions">🔖</a> Conclusiones</li>
+					</ul>
 				</section>
 
 				<section>
@@ -124,7 +125,7 @@
 							<blockquote>Mercadopago, Afip, Anses, ...</blockquote>
 						</div>
 						<div class="fragment">
-							<h4>Alto</h4>
+							<h4>Delicado</h4>
 							<p>Cuentas que permiten acceso a otras cuentas</p>
 							<blockquote>mail, móvil, aplicación de autenticación, ...</blockquote>
 						</div>
@@ -157,6 +158,40 @@
 						</li>
 					</ul>
 				</section>
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h3>¿Qué es una clave fuerte?</h3>
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<ul>
+								<li>Min 16 caracteres, mejor 20+</li>
+								<li>
+									Contiene caracteres minúsculas, mayúsculas, números y especiales
+								</li>
+								<li>
+									¡Cada cuenta require una clave propia!
+								</li>
+								<li>
+									No compartir claves con otras personas (excepto emergencias)
+								</li>
+								<li>
+									No gurdarlos en texto plano en dispositivos electronicos
+								</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<h4>Ejemplo</h4>
+							<blockquote>
+								<strong>Apadeaj-usCLmaFUqu16+ca.</strong><br />
+							</blockquote>
+							<blockquote>
+								<u>A</u> <u>pa</u>rtir <u>de</u> <u>ah</u>ora <u>-</u> <u>us</u>are <u>CL</u>AVES
+								<u>ma</u>s
+								<u>FU</u>ERTES <u>qu</u>e <u>16+</u> <u>ca</u>racteres<u>.</u>
+							</blockquote>
+						</div>
+					</div>
+				</section>
 
 				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
 					data-background-opacity="0.2">
@@ -168,7 +203,7 @@
 					<h3>¿Dónde guardamos todas estas claves?</h3>
 					<ul>
 						<li>Anotado en un papel en un lugar seguro o en la caja fuerte</li>
-						<li>En el llavero del sistema operativo</li>
+						<li>En el llavero del sistema operativo o del navegador</li>
 						<li>En una nube especial para claves</li>
 						<li>En un tesoro digital...<br />...como <strong>KeePass</strong></li>
 					</ul>
@@ -185,15 +220,31 @@
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
 					data-background-position="top 20% left 50%">
 					<h3>¿Qué es KeePass?</h3>
-					<ul>
-						<li>Es un gestor de contraseñas</li>
-						<li>Está protegido por una <strong>clave maestra</strong> que encripta el tesoro</li>
-						<li>Permite almacenar usuario, contraseña, página web, etiquetas y adjuntos</li>
-						<li>Puede generar claves</li>
-						<li>Es extensible por extensiones</li>
-						<li>Es un software abierto y existe para Linux, Windows, Mac, Android, iOS, web y otros sistemas
-						</li>
-					</ul>
+
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p>Es un gestor de contraseñas. Permite almacenar:</p>
+							<ul>
+								<li>usuario</li>
+								<li>clave</li>
+								<li>página web</li>
+								<li>notas</li>
+								<li>etiquetas</li>
+								<li>adjuntos</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<ul>
+								<li>Está protegido por una <strong>clave maestra</strong> que encripta el tesoro</li>
+								<li>Puede generar claves</li>
+								<li>Es extensible por extensiones</li>
+								<li>Es un software abierto y existe para Linux, Windows, Mac, Android, iOS, web
+									(embedido) y otros
+									sistemas
+								</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
 					data-background-position="top 20% left 50%">
@@ -205,7 +256,8 @@
 							<figcaption>Linux: Desde software manager</figcaption>
 						</figure>
 						<figure class="fragment current-visible" data-fragment-index="0">
-							<img class="vh-40" src="images/download-keepass.png" />
+							<img class="vh-30" src="images/download-keepass.png" />
+							<img class="vh-30" src="images/keepass-ports.png" />
 							<figcaption>Windows/Mac: descargar desde <br />
 								<a href="https://keepass.info/download.html"
 									target="_blank">keepass.info/download.html</a>
@@ -213,9 +265,10 @@
 						</figure>
 						<figure class="fragment">
 							<img class="vh-40" src="images/google-play-keepass2android.png" />
-							<figcaption>Google Play Store: Instalar el app<br />
+							<figcaption>Móvil: Instalar desde Google Play o iOS store<br />
 								<a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android"
-									target="_blank">keepass2android.keepass2android</a>
+									target="_blank">KeePass2Android</a> /
+								<a href="https://keepassium.com/" target="_blank">KeePassium</a>
 							</figcaption>
 						</figure>
 					</div>
@@ -224,8 +277,8 @@
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
 					data-background-position="top 20% left 50%">
 					<h3>¿Cómo crear un nuevo tesoro de claves?</h3>
-					<img class="vh-40" src="images/keepass-new-database-dialog.png" />
-					<img class="vh-40" src="images/keepass-new-database-password.png" />
+					<img class="vh-30" src="images/keepass-new-database-dialog.png" />
+					<img class="vh-30" src="images/keepass-new-database-password.png" />
 				</section>
 				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
 					data-background-position="top 20% left 50%">
@@ -321,8 +374,15 @@
 								apps:
 							</p>
 							<ul>
-								<li><a href="https://foldersync.io/" target="_blank">FolderSync Pro</a> (WebDAV)</li>
-								<li><a href="https://www.davx5.com/">DAVx<sup>5</sup></a> (WebDAV, CardDAV, CalDAV)</li>
+								<li>
+									FolderSync Pro (WebDAV)<br />
+									<a href="https://foldersync.io/" target="_blank">foldersync.io</a>
+								</li>
+								<li>
+									DAVx<sup>5</sup> (WebDAV, CardDAV, CalDAV)<br />
+									<a href="https://www.davx5.com/">davx5.com</a>
+								</li>
+								<li>...</li>
 							</ul>
 						</figure>
 						<div class="fragment">
@@ -358,18 +418,29 @@
 					<ul>
 						<li>Por proveedor:
 							<ol>
-								<li>Elegir un proveedor: <a href="https://nextcloud.com/es/sign-up/"
-										target="_blank">Proveedores certificados</a> o <a
-										href="https://nextcloud.com/es/partners/" target="_blank">Socios</a></li>
+								<li>Elegir un proveedor:
+									<ul>
+										<li>
+											Proveedores certificados
+											<a href="https://nextcloud.com/es/sign-up/"
+												target="_blank">nextcloud.com/es/sign-up</a>
+										</li>
+										<li>
+											Socios
+											<a href="https://nextcloud.com/es/partners/"
+												target="_blank">nextcloud.com/es/partners</a>
+										</li>
+									</ul>
 								<li>Crear una cuenta</li>
 								<li>Elegir un plan</li>
 								<li>Pagar (anual o mensual)</li>
 							</ol>
 						</li>
-						<li>En servidor propio: <a href="https://nextcloud.com/es/install/#instructions-server"
-								target="_blank">
-								Descargar servidor
-							</a></li>
+						<li>
+							En servidor propio:
+							<a href="https://nextcloud.com/es/install/#instructions-server"
+								target="_blank">nextcloud.com/es/install</a>
+						</li>
 					</ul>
 				</section>
 			</section>
@@ -386,7 +457,6 @@
 					<img class="r-stretch border-radius-0-5em" src="images/nextcloud-keepass.drawio.svg"
 						alt="Sync keepass with Nextcloud" />
 					<ul>
-						<li><a href="https://foldersync.io/" target="_blank">FolderSync Pro</a></li>
 						<li>
 							Nextcloud mobile app: <a href="https://apps.nextcloud.com/apps/android_nextcloud_app"
 								target="_blank">
@@ -394,6 +464,7 @@
 								target="_blank">iOS
 							</a>
 						</li>
+						<li>FolderSync Pro <a href="https://foldersync.io/" target="_blank">foldersync.io</a></li>
 					</ul>
 				</section>
 			</section>
@@ -476,13 +547,13 @@
 					<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
 						<a property="dct:title" rel="cc:attributionURL"
 							href="https://github.com/moonline/Slides.Keepass2Nextcloud" target="_blank">Esta
-							presentación
-							sobre KeePass</a>
+							presentación sobre KeePass
+						</a>
 						por <a rel="cc:attributionURL dct:creator" property="cc:attributionName"
-							href="https://www.linkedin.com/in/tobias-blaser-578388139/" target="_blank">Tobias
-							Blaser</a>
-						está licenciada
-						bajo
+							href="https://www.linkedin.com/in/tobias-blaser-578388139/" target="_blank">
+							Tobias Blaser
+						</a>
+						está licenciada bajo
 						<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank"
 							rel="license noopener noreferrer" style="display:inline-block;">
 							CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
