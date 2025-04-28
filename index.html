@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>KeePass 🙵 Nextcloud</title>
+
+	<link rel="stylesheet" type="text/css" href="reveal.js/dist/reset.css" />
+	<link rel="stylesheet" type="text/css" href="reveal.js/dist/reveal.css" />
+	<link rel="stylesheet" type="text/css" href="reveal.js/dist/theme/black.css" />
+
+	<style>
+		.reveal h1,
+		.reveal h2,
+		.reveal h3 {
+			text-shadow: 0 0 0.5rem black;
+		}
+
+		.vh-80 {
+			height: 80vh;
+		}
+
+		.vh-60 {
+			height: 60vh;
+		}
+
+		.vh-50 {
+			height: 50vh;
+		}
+
+		.vh-40 {
+			height: 40vh;
+		}
+
+		.vh-30 {
+			height: 30vh;
+		}
+
+		.vh-20 {
+			height: 20vh;
+		}
+
+		.border-radius-0-5em {
+			border-radius: 0.5em;
+		}
+
+		.border-radius-1em {
+			border-radius: 1em;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section id="intro" data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.4">
+					<h1 class="r-fit-text">KeePass 🙵 Nextcloud</h1>
+					<h2 class="r-fit-text">La última clave que necesitarás recordar</h2>
+					<!-- Proteger y sincroniza claves entre dispositivos con Keepass y Nextcloud -->
+				</section>
+
+				<section data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.2">
+					<h2>KeePass 🙵 Nextcloud</h2>
+					<ul style="list-style-type: none;">
+						<li><a href="#/keys">🔖</a> Claves</li>
+						<li><a href="#/accounts">🔖</a> Proteger cuentas</li>
+						<li><a href="#/keepass">🔖</a> KeePass</li>
+						<li><a href="#/vault-sync">🔖</a> Sincronizar un fichero de claves</li>
+						<li><a href="#/nextcloud">🔖</a> Nextcloud</li>
+						<li><a href="#/keepass-sync">🔖</a> Sincronizar KeePass con Nextcloud</li>
+						<li><a href="#/conclusions">🔖</a> Conclusiones</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>¿Quién soy?</h2>
+					<iframe class="r-stretch" data-src="https://tobiasblaser.ch/es/about/tobiasblaser/#content-start"
+						data-preload></iframe>
+					<a href="https://www.linkedin.com/in/tobias-blaser-578388139/"
+						target="_blank">linkedin.com/in/tobias-blaser-578388139</a>
+				</section>
+			</section>
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: A picture of a golden key with a keyring with a bunch of keys at a door lock of a wooden door -->
+				<section id="keys" data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
+					<h2>¿Por qué tenemos claves?</h2>
+					<blockquote>¿No sería más sencillo sin claves?</blockquote>
+				</section>
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
+					<h3>¿Por qué tenemos claves?</h3>
+					<ul>
+						<li><strong>Llaves</strong> de nuestra casa: Solo puede entrar quienes tienen la llave</li>
+						<li>Claves son como <strong>llaves virtuales</strong></li>
+						<li>Pretegemos a nuestra casa virtual con claves:
+							<ul>
+								<li>El móvil o la computadora</li>
+								<li>El homebanking</li>
+								<li>Cuentas en redes sociales</li>
+								<li>...</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.4">
+					<!-- TODO encontrar sinonimo de crítico/delicado - importante,relevante,significativo,sensitivo - ¿Qué importancia tienen mis cuentas? -->
+					<h2>¿Qué delicadas son mis cuentas?</h2>
+					<blockquote>¿Qué pasaría si mi vecino tuviera la clave de mi homebanking?</blockquote>
+				</section>
+				<section data-background-image="images/door-lock-keyring.jpg" data-background-opacity="0.2">
+					<h3>¿Qué delicadas son mis cuentas?</h3>
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<h4>Bajo</h4>
+							<p>Cuentas que no permiten hacer cambios delicados</p>
+							<blockquote>Pedidos Ya, EdeNor, Coto, ...</blockquote>
+						</div>
+						<div class="fragment current-visible" data-fragment-index="0">
+							<h4>Alto</h4>
+							<p>Cuentas que manejan dinero o permiten hacer cambios delicados</p>
+							<blockquote>Mercadopago, Afip, Anses, ...</blockquote>
+						</div>
+						<div class="fragment">
+							<h4>Delicado</h4>
+							<p>Cuentas que permiten acceso a otras cuentas</p>
+							<blockquote>mail, móvil, aplicación de autenticación, ...</blockquote>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: A picture of two guards guarding a golden key in a warehouse -->
+				<section id="accounts" data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.4">
+					<h2>¿Cómo protegemos nuestras cuentas?</h2>
+					<blockquote>¿Sirve la fecha de cumpleaños de mi marido como pin para mi móvil?</blockquote>
+				</section>
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h3>¿Cómo protegemos nuestras cuentas?</h3>
+					<ul>
+						<li>
+							<strong>Bajo</strong>:
+							PIN o clave simple
+						</li>
+						<li>
+							<strong>Alto</strong>:
+							Clave + segundo factor
+						</li>
+						<li>
+							<strong>Delicado</strong>:
+							Clave compleja + segundo factor, token de hardware o limitación de acceso fisico
+						</li>
+					</ul>
+				</section>
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h3>¿Qué es una clave fuerte?</h3>
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<ul>
+								<li>Min 16 caracteres, mejor 20+</li>
+								<li>
+									Contiene caracteres minúsculas, mayúsculas, números y especiales
+								</li>
+								<li>
+									¡Cada cuenta require una clave propia!
+								</li>
+								<li>
+									No compartir claves con otras personas (excepto emergencias)
+								</li>
+								<li>
+									No guardarlos en texto plano en dispositivos electronicos
+								</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<h4>Ejemplo</h4>
+							<blockquote>
+								<strong>Apadeaj-usCLmaFUqu16+ca.</strong><br />
+							</blockquote>
+							<blockquote>
+								<u>A</u> <u>pa</u>rtir <u>de</u> <u>ah</u>ora <u>-</u> <u>us</u>are <u>CL</u>AVES
+								<u>ma</u>s
+								<u>FU</u>ERTES <u>qu</u>e <u>16+</u> <u>ca</u>racteres<u>.</u>
+							</blockquote>
+						</div>
+					</div>
+				</section>
+
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h2>¿Dónde guardamos todas estas claves?</h2>
+					<blockquote>¿Anotado en un papelito baja el teclado?</blockquote>
+				</section>
+				<section data-background-image="images/guards-guarding-golden-key-gemini.jpg"
+					data-background-opacity="0.2">
+					<h3>¿Dónde guardamos todas estas claves?</h3>
+					<ul>
+						<li>Anotado en un papel en un lugar seguro o en la caja fuerte</li>
+						<li>En el llavero del sistema operativo o del navegador</li>
+						<li>En una nube especial para claves</li>
+						<li>En una caja fuerte digital...<br />...como <strong>KeePass</strong></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: An image of a safe named KeePass, full of post-its, guarded by unarmed agents with sunglasses -->
+				<section id="keepass" data-background-image="images/keepass-safe-secret-agents.jpg"
+					data-background-opacity="1" data-background-position="top 20% left 50%">
+					<img class="vh-20" src="images/icon-keepass.png" style="position: relative; top: -10vh;" />
+					<h2 style="opacity: 0;">KeePass</h2>
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Qué es KeePass?</h3>
+
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p>Es un gestor de contraseñas. Permite almacenar:</p>
+							<ul>
+								<li>usuario</li>
+								<li>clave</li>
+								<li>página web</li>
+								<li>notas</li>
+								<li>etiquetas</li>
+								<li>adjuntos</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<ul>
+								<li>Está protegido por una <strong>clave maestra</strong> que encripta el fichero de
+									claves</li>
+								<li>Puede generar claves</li>
+								<li>Es extensible por extensiones</li>
+								<li>Es un software libre y existe para Linux, Windows, Mac, Android, iOS, web
+									(embedido) y otros
+									sistemas
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo instalar KeePass?</h3>
+					<div class="r-stack">
+						<figure class="fragment fade-out" data-fragment-index="0">
+							<img class="vh-30" src="images/software-manager-keepass-1.png" />
+							<img class="vh-30" src="images/software-manager-keepass-2.png" />
+							<figcaption>Linux: Desde software manager</figcaption>
+						</figure>
+						<figure class="fragment current-visible" data-fragment-index="0">
+							<img class="vh-30" src="images/download-keepass.png" />
+							<img class="vh-30" src="images/keepass-ports.png" />
+							<figcaption>Windows/Mac: descargar desde <br />
+								<a href="https://keepass.info/download.html"
+									target="_blank">keepass.info/download.html</a>
+							</figcaption>
+						</figure>
+						<figure class="fragment">
+							<img class="vh-40" src="images/google-play-keepass2android.png" />
+							<figcaption>Móvil: Instalar desde Google Play o iOS store<br />
+								<a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android"
+									target="_blank">KeePass2Android</a> /
+								<a href="https://keepassium.com/" target="_blank">KeePassium</a>
+							</figcaption>
+						</figure>
+					</div>
+				</section>
+
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo crear un nuevo fichero de claves?</h3>
+
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<img class="vh-30" src="images/keepass-new-database-dialog.png" />
+							<img class="vh-30" src="images/keepass-new-database-password.png" />
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<img class="vh-20" src="images/keepass-new-database-configuration.png" />
+							<img class="vh-20" src="images/keepass-login-database.png" />
+						</div>
+					</div>
+				</section>
+
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo agregar una clave?</h3>
+					<img class="r-stretch" src="images/keepass-new-entry.png" />
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo agregar información adicional?</h3>
+					<img class="r-stretch" src="images/keepass-new-entry-advanced.png" />
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo generar claves?</h3>
+					<img class="vh-40" src="images/keepass-password-generator1.png" />
+					<img class="vh-40" src="images/keepass-password-generator2.png" />
+				</section>
+				<section data-background-image="images/keepass-safe-secret-agents.jpg" data-background-opacity="0.1"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo copiar claves?</h3>
+					<img class="vh-40" src="images/keepass-copy1.png" />
+					<img class="vh-40" src="images/keepass-copy2.png" />
+				</section>
+			</section>
+
+			<section>
+				<section id="vault-sync" data-background-image="images/envelope-handover.jpg"
+					data-background-opacity="0.4" data-background-position="top 20% left 50%">
+					<h2>¿Cómo sincronizamos el fichero de claves a otro dispositivo?</h2>
+					<blockquote>¿En un archivo de texto en Dropbox?</blockquote>
+				</section>
+				<section data-background-image="images/envelope-handover.jpg" data-background-opacity="0.2"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo sincronizamos el fichero de claves a otro dispositivo?</h3>
+					<ul>
+						<li>Copiar el archivo por USB o Bluetooth a otro dispositivo</li>
+						<li>Sincronizarlo con un programa por USB, por ejemplo rsync</li>
+						<li>Sincronizarlo por una nube pública</li>
+						<li>Sincronizarlo por una nube privada...<br />
+							...como por ejemplo <strong>Nextcloud</strong></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section id="nextcloud" data-background-image="images/paperplanes-cloud.jpg"
+					data-background-opacity="0.4">
+					<img class="vh-30" src="images/icon-nextcloud.png" />
+					<h2>Nextcloud</h2>
+					<blockquote>¿Existe una nube que no vende mis datos?</blockquote>
+				</section>
+				<section data-background-image="images/paperplanes-cloud.jpg" data-background-opacity="0.1">
+					<h3>¿Qué es Nextcloud?</h3>
+
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<p>
+								Es un software libre cliente-servidor que ofrece una nube privada:
+							</p>
+							<ul>
+								<li>Alojamiento de archivos (WebDAV)</li>
+								<li>Sincronización de contactos (CardDAV)</li>
+								<li>Calendarios y tareas (CalDAV)</li>
+								<li>Acceso por dispositivos y la web</li>
+								<li>Compartir archivos, contactos y calendarios con otros usuarios o públicamente</li>
+							</ul>
+							<p><a href="https://nextcloud.com/es/" target="_blank">nextcloud.com</a> </p>
+						</div>
+						<figure class="fragment current-visible" data-fragment-index="0">
+							<img class="vh-40" src="images/nextcloud-webinterface.jpg" />
+							<figcaption>Aplicación web</figcaption>
+						</figure>
+						<figure class="fragment current-visible">
+							<img class="vh-40" src="images/nextcloud-tray-widget.jpg" />
+							<img class="vh-40" src="images/nextcloud-client.jpg" />
+							<figcaption>Aplicación de escritorio</figcaption>
+						</figure>
+						<figure class=" fragment current-visible">
+							<img class="vh-40" src="images/nextcloud-mobile-overview.jpg" />
+							<img class="vh-40" src="images/nextcloud-mobile-files.jpg" />
+							<figcaption>Aplicación móvil</figcaption>
+						</figure>
+						<figure class="fragment current-visible">
+							<p>
+								Para sincronizar archivos, contactos y calendarios de forma regular, existen varios
+								apps:
+							</p>
+							<ul>
+								<li>
+									FolderSync Pro (WebDAV)<br />
+									<a href="https://foldersync.io/" target="_blank">foldersync.io</a>
+								</li>
+								<li>
+									DAVx<sup>5</sup> (WebDAV, CardDAV, CalDAV)<br />
+									<a href="https://www.davx5.com/">davx5.com</a>
+								</li>
+								<li>...</li>
+							</ul>
+						</figure>
+						<div class="fragment">
+							<p>
+								Existe una variedad amplia de <a href="https://apps.nextcloud.com"
+									target="_blank">extensiones</a>.<br />
+								Por ejemplo:</p>
+							<ul>
+								<li>
+									Notas:
+									<a href="https://apps.nextcloud.com/apps/notes" target="_blank">Notes (Markdown)</a>
+								</li>
+								<li>
+									KeePass:
+									<a href="https://apps.nextcloud.com/apps/keeweb" target="_blank">Keeweb</a>
+								</li>
+								<li>
+									Chat y llamadas:
+									<a href="https://apps.nextcloud.com/apps/spreed" target="_blank">Talk</a>
+								</li>
+								<li>
+									Suite ofimática en línea:
+									<a href="https://apps.nextcloud.com/apps/onlyoffice" target="_blank">ONLYOFFICE</a>
+								</li>
+							</ul>
+							<p>y muchos más</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background-image="images/paperplanes-cloud.jpg" data-background-opacity="0.1">
+					<h3>¿Cómo obtener una cuenta de Nextcloud?</h3>
+					<ul>
+						<li>Por proveedor:
+							<ol>
+								<li>Elegir un proveedor:
+									<ul>
+										<li>
+											Proveedores certificados
+											<a href="https://nextcloud.com/es/sign-up/"
+												target="_blank">nextcloud.com/es/sign-up</a>
+										</li>
+										<li>
+											Socios
+											<a href="https://nextcloud.com/es/partners/"
+												target="_blank">nextcloud.com/es/partners</a>
+										</li>
+									</ul>
+								<li>Crear una cuenta</li>
+								<li>Elegir un plan</li>
+								<li>Pagar (anual o mensual)</li>
+							</ol>
+						</li>
+						<li>
+							En servidor propio:
+							<a href="https://nextcloud.com/es/install/#instructions-server"
+								target="_blank">nextcloud.com/es/install</a>
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section id="keepass-sync" data-background-image="images/envelope-handover.jpg"
+					data-background-opacity="0.4" data-background-position="top 20% left 50%">
+					<h2>¿Cómo sincronizar un fichero de KeePass con Nextcloud a mi móvil?</h2>
+					<blockquote>¿El app de Nextcloud no puede sincronizar archivos regularmente 🤔?</blockquote>
+				</section>
+				<section data-background-image="images/envelope-handover.jpg" data-background-opacity="0.2"
+					data-background-position="top 20% left 50%">
+					<h3>¿Cómo sincronizar un fichero de KeePass con Nextcloud a mi móvil?</h3>
+					<img class="r-stretch border-radius-0-5em" src="images/nextcloud-keepass.drawio.svg"
+						alt="Sync keepass with Nextcloud" />
+					<ul>
+						<li>
+							Nextcloud mobile app: <a href="https://apps.nextcloud.com/apps/android_nextcloud_app"
+								target="_blank">
+								Android</a> / <a href="https://apps.nextcloud.com/apps/ios_nextcloud_app"
+								target="_blank">iOS
+							</a>
+						</li>
+						<li>FolderSync Pro <a href="https://foldersync.io/" target="_blank">foldersync.io</a></li>
+					</ul>
+				</section>
+			</section>
+
+
+			<section>
+				<!-- Gemini/Imagen 3 prompt: An image of a golden envelope sent from a guard up to a white cloud -->
+				<section id="conclusions" data-background-image="images/guard-envelope-cloud.jpg"
+					data-background-opacity="0.4" data-background-position="top 30% left 50%">
+					<h2>Conclusiones</h2>
+				</section>
+				<section data-background-image="images/guard-envelope-cloud.jpg" data-background-opacity="0.2">
+					<h3>Conclusiones</h3>
+
+					<div class="r-stack">
+						<div class="fragment fade-out" data-fragment-index="0">
+							<h4>KeePass</h4>
+							<ul>
+								<li>Guarda claves de forma <strong>segura</strong> (encriptado)</li>
+								<li>Requiere una <strong>clave maestra fuerte</strong></li>
+								<li>Requiere guardar la frase de recuperación de forma segura – por ejemplo en
+									la caja fuerte</li>
+								<li>Se recomienda hacer un <strong>backup frecuente</strong> del fichero de claves</li>
+								<li>Necesita un plan de acceso en caso de emergencia – por ejemplo guardando la clave
+									maestra en el fichero de la pareja</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="0">
+							<h4>Nextcloud</h4>
+							<ul>
+								<li>
+									<strong>Sincroniza</strong> archivos,
+									contactos y calendarios entre dispositivos
+								</li>
+								<li>
+									Permite <strong>sincronizar ficheros de claves</strong> de forma segura
+									– si el <strong>proveedor es confiable</strong>
+								</li>
+								<li>
+									Permite acceder a contenidos desde
+									<strong>equipos móviles y la plataforma web</strong>
+								</li>
+								<li>
+									Para sincronizar contenidos a dispositivos móviles regularmente: <strong>usamos
+										apps de WebDAV, CalDAV y CardDAV</strong> – por ejemplo FolderSync y
+									DAVx<sup>5</sup>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<section>
+				<section id="closing" data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.4">
+					<h1 class="r-fit-text">KeePass 🙵 Nextcloud</h1>
+					<h2 class="r-fit-text">La última clave que necesitarás recordar</h2>
+				</section>
+				<section data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.2">
+					<h2>Recursos</h2>
+
+					<h3>KeePass</h3>
+					<ul>
+						<li><a href="https://keepass.info" target="_blank">KeePass2</a></li>
+						<li><a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android&hl=es"
+								target="_blank">keepass2android</a>
+						</li>
+					</ul>
+
+					<h3>Nextcloud</h3>
+					<ul>
+						<li><a href="https://nextcloud.com/es/" target="_blank">Nextcloud</a></li>
+						<li><a href="https://apps.nextcloud.com/apps/keeweb" target="_blank">Keeweb plugin</a></li>
+					</ul>
+				</section>
+				<section data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.2">
+					<h2>Letra chica</h2>
+
+					<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+						<a property="dct:title" rel="cc:attributionURL"
+							href="https://github.com/moonline/Slides.Keepass2Nextcloud" target="_blank">Esta
+							presentación sobre KeePass
+						</a>
+						por <a rel="cc:attributionURL dct:creator" property="cc:attributionName"
+							href="https://www.linkedin.com/in/tobias-blaser-578388139/" target="_blank">
+							Tobias Blaser
+						</a>
+						está licenciada bajo
+						<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank"
+							rel="license noopener noreferrer" style="display:inline-block;">
+							CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+								src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">
+							<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+								src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">
+							<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+								src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="">
+						</a>
+					</p>
+
+					<ul>
+						<li>Esta presentación fue creada con <a href="https://revealjs.com/"
+								target="_blank">reveal.js</a>
+						</li>
+						<li>
+							Las imágenes fueron generadas por <a href="https://deepmind.google/technologies/imagen-3/"
+								target="_blank">
+								Imagen 3
+							</a> en Google Gemini
+						</li>
+					</ul>
+
+					<h2>Detalles</h2>
+					<ul>
+						<li><a href="https://github.com/moonline/Slides.Keepass2Nextcloud" target="_blank">GitHub:
+								Slides.Keepass2Nextcloud</a></li>
+						<li><a href="https://www.linkedin.com/in/tobias-blaser-578388139/" target="_blank">Linkedin:
+								Tobias
+								Blaser</a></li>
+					</ul>
+				</section>
+				<section data-background-image="images/safe-dark-gemini.jpg" data-background-opacity="0.4">
+					<h1 class="r-fit-text">KeePass 🙵 Nextcloud</h1>
+					<h2 class="r-fit-text">La última clave que necesitarás recordar</h2>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<!-- TODO github build install node_modules? -->
+	<script src="reveal.js/dist/reveal.js"></script>
+	<script src="reveal.js/plugin/notes/notes.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
